@@ -3,35 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FNaF Fan Site</title>
+    <title>FNaF Fan Site - Ретро-неон</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Дополнительные стили для неонового эффекта */
+        body {
+            font-family: 'Press Start 2P', cursive; /* Ретро-шрифт 80-х */
+            background: linear-gradient(to bottom, #000000, #0d0221); /* Тёмный фон с лёгким градиентом */
+            color: #e0e0e0; /* Светло-серый текст */
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body>
 
     <!-- Логотип и панель навигации -->
     <div class="fixed top-0 left-0 z-50 group">
         <!-- Логотип и текст -->
-        <div class="flex items-center bg-gray-800 w-16 h-16 px-2 shadow-lg group-hover:w-64 transition-all duration-300">
-            <img src="pizza-logo.png" alt="Логотип Пиццы" class="w-12 h-12">
-            <span class="text-yellow-400 text-xl font-bold ml-4 hidden group-hover:block transition-opacity duration-300">
+        <div class="flex items-center bg-gradient-to-r from-purple-800 to-indigo-800 w-16 h-16 px-2 shadow-lg group-hover:w-64 transition-all duration-300">
+            <img src="pizza-logo.png" alt="Логотип Пиццы" class="w-12 h-12 neon-shadow">
+            <span class="text-pink-300 text-xl font-bold ml-4 hidden group-hover:block transition-opacity duration-300">
                 Five Nights at Freddy's
             </span>
         </div>
 
         <!-- Панель навигации -->
-        <div class="absolute top-16 left-0 w-64 bg-gray-800 p-4 shadow-lg hidden group-hover:block">
+        <div class="absolute top-16 left-0 w-64 bg-gradient-to-b from-purple-900 to-black p-4 shadow-lg hidden group-hover:block">
             <nav class="space-y-4">
-                <a href="#about" class="block bg-gray-700 hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition">
+                <a href="#about" class="block bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 hover:text-white px-4 py-2 rounded-lg transition">
                     О нас
                 </a>
-                <a href="#characters" class="block bg-gray-700 hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition">
+                <a href="#characters" class="block bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 hover:text-white px-4 py-2 rounded-lg transition">
                     Персонажи
                 </a>
-                <a href="#gallery" class="block bg-gray-700 hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition">
+                <a href="#gallery" class="block bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 hover:text-white px-4 py-2 rounded-lg transition">
                     Галерея
                 </a>
-                <a href="#contact" class="block bg-gray-700 hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition">
+                <a href="#contact" class="block bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 hover:text-white px-4 py-2 rounded-lg transition">
                     Контакты
                 </a>
             </nav>
@@ -42,8 +61,8 @@
     <div class="pt-20 p-8">
         <!-- Раздел "О нас" -->
         <section id="about" class="py-16">
-            <h1 class="text-3xl font-bold text-yellow-400 mb-4">О нас</h1>
-            <p>
+            <h1 class="text-4xl font-bold text-pink-300 mb-4">О нас</h1>
+            <p class="text-gray-400">
                 Добро пожаловать в Freddy Fazbear's Pizza! Здесь фантазия и веселье оживают... 
                 или, по крайней мере, так говорят. Вы — ночной охранник, который должен выжить среди 
                 аниматроников, которые активны по ночам. Удачи!
@@ -52,46 +71,47 @@
 
         <!-- Раздел "Персонажи" -->
         <section id="characters" class="py-16">
-            <h2 class="text-3xl font-bold text-yellow-400 mb-4">Персонажи</h2>
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-700 p-6 rounded-lg text-center hover:scale-105 transition transform">
-                    <img src="freddygg.webp" alt="Фредди" class="w-24 h-24 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold text-yellow-400">Фредди Фазбер</h3>
-                    <p>Харизматичный лидер аниматроников.</p>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="freddygg.webp" alt="Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фредди Фазбер</h3>
+                    <p class="text-gray-400">Харизматичный лидер аниматроников.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg text-center hover:scale-105 transition transform">
-                    <img src="bonnie.webp" alt="Бонни" class="w-24 h-24 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold text-yellow-400">Бонни Кролик</h3>
-                    <p>Всегда готов сыграть на гитаре.</p>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="bonnie.webp" alt="Бонни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Бонни Кролик</h3>
+                    <p class="text-gray-400">Всегда готов сыграть на гитаре.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg text-center hover:scale-105 transition transform">
-                    <img src="chika.webp" alt="Чика" class="w-24 h-24 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold text-yellow-400">Чика</h3>
-                    <p>Обожает пиццу и хорошую шутку.</p>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="chika.webp" alt="Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Чика</h3>
+                    <p class="text-gray-400">Обожает пиццу и хорошую шутку.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg text-center hover:scale-105 transition transform">
-                    <img src="foxy.webp" alt="Фокси" class="w-24 h-24 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold text-yellow-400">Фокси</h3>
-                    <p>Осторожнее с ним — он очень быстрый!</p>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="foxy.webp" alt="Фокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фокси</h3>
+                    <p class="text-gray-400">Осторожнее с ним — он очень быстрый!</p>
                 </div>
             </div>
         </section>
 
         <!-- Раздел "Галерея" -->
         <section id="gallery" class="py-16">
-            <h2 class="text-3xl font-bold text-yellow-400 mb-4">Галерея</h2>
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Галерея</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <img src="freddy.jpeg" alt="Сцена Фредди" class="w-full rounded-lg hover:scale-105 transition transform">
-                <img src="koridor.jpeg" alt="Коридор" class="w-full rounded-lg hover:scale-105 transition transform">
-                <img src="office.jpeg" alt="Офис" class="w-full rounded-lg hover:scale-105 transition transform">
+                <img src="freddy.jpeg" alt="Сцена Фредди" class="w-full rounded-lg hover:scale-105 transition transform neon-shadow">
+                <img src="koridor.jpeg" alt="Коридор" class="w-full rounded-lg hover:scale-105 transition transform neon-shadow">
+                <img src="office.jpeg" alt="Офис" class="w-full rounded-lg hover:scale-105 transition transform neon-shadow">
             </div>
         </section>
 
         <!-- Раздел "Контакты" -->
         <section id="contact" class="py-16">
-            <h2 class="text-3xl font-bold text-yellow-400 mb-4">Контакты</h2>
-            <p>Свяжитесь с нами: fanfnaf@example.com</p>
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Контакты</h2>
+            <p class="text-gray-400">Свяжитесь с нами: fanfnaf@example.com</p>
         </section>
     </div>
+    
 </body>
 </html>
