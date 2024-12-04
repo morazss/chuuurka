@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freddy Fazbear's Pizza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #0d0221);
+            color: #e0e0e0;
+        }
+        h1, h2 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .highlight {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Freddy Fazbear's Pizza</h1>
+
+        <!-- Описание пиццерии -->
+        <section class="space-y-8">
+            <p class="text-gray-400">
+                Добро пожаловать в легендарную пиццерию <span class="highlight">Freddy Fazbear's Pizza</span>, где радость для детей и взрослых сочетается с тайной. Это место, наполненное звуками смеха, пиццей и... чем-то ещё.
+            </p>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg mb-8">
+                <img src="images/freddy_fazbear.jpg" alt="Freddy Fazbear's Pizza" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <h2 class="text-3xl font-bold text-pink-300">Особенности</h2>
+            <ul class="list-disc pl-8 text-gray-400">
+                <li>Аниматроники, выступающие на сцене: <span class="highlight">Фредди</span>, <span class="highlight">Бонни</span>, <span class="highlight">Чика</span> и <span class="highlight">Фокси</span>.</li>
+                <li>Самая вкусная пицца в городе!</li>
+                <li>Уютная атмосфера для празднования дней рождения и других событий.</li>
+            </ul>
+        </section>
+
+        <!-- История -->
+        <section class="py-16">
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">История</h2>
+            <p class="text-gray-400">
+                Freddy Fazbear's Pizza открылась как место для веселья и радости, но за её кулисами скрываются жуткие тайны. Говорят, что аниматроники оживают ночью, и охранники, работавшие здесь, сталкивались с необъяснимыми событиями. Вы готовы узнать правду?
+            </p>
+        </section>
+
+        <!-- Контакты -->
+        <section class="py-16">
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Как найти нас</h2>
+            <p class="text-gray-400">
+                Мы находимся по адресу: Городская площадь, дом 5. Заходите и наслаждайтесь пиццей!
+            </p>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="images/map.jpg" alt="Карта расположения пиццерии" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
