@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scary Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      background: #000;
+    }
+    #game-over {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 10;
+    }
+    #game-over video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #buttons {
+      display: none;
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Скример -->
+  <div id="game-over">
+    <video id="screamer" autoplay muted playsinline>
+      <source src="screamer.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+    <div id="buttons">
+      <button onclick="mainMenu()">Главное меню</button>
+      <button onclick="restartGame()">Сыграть снова</button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    const gameOverScreen = document.getElementById('game-over');
+    const screamerVideo = document.getElementById('screamer');
+    const buttons = document.getElementById('buttons');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let player = { x: 100, y: 100, size: 30, speed: 5 };
+    let obstacles = [];
+    let gameRunning = true;
+
+    // Генерация препятствий
+    function createObstacle() {
+      obstacles.push({
+        x: canvas.width,
+        y: Math.random() * canvas.height,
+        size: 20 + Math.random() * 50,
+        speed: 2 + Math.random() * 3
+      });
+    }
+
+    setInterval(createObstacle, 1000);
+
+    // Игровой цикл
+    function gameLoop() {
+      if (!gameRunning) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Рисуем игрока
+      ctx.fillStyle = 'white';
+      ctx.fillRect(player.x, player.y, player.size, player.size);
+
+      // Рисуем препятствия
+      ctx.fillStyle = 'red';
+      obstacles.forEach((obs, index) => {
+        obs.x -= obs.speed;
+        ctx.fillRect(obs.x, obs.y, obs.size, obs.size);
+
+        // Проверка столкновения
+        if (
+          player.x < obs.x + obs.size &&
+          player.x + player.size > obs.x &&
+          player.y < obs.y + obs.size &&
+          player.y + player.size > obs.y
+        ) {
+          endGame();
+        }
+
+        // Удаление препятствий за пределами экрана
+        if (obs.x + obs.size < 0) {
+          obstacles.splice(index, 1);
+        }
+      });
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Управление игроком
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') player.y -= player.speed;
+      if (e.key === 'ArrowDown') player.y += player.speed;
+      if (e.key === 'ArrowLeft') player.x -= player.speed;
+      if (e.key === 'ArrowRight') player.x += player.speed;
+    });
+
+    // Конец игры
+    function endGame() {
+      gameRunning = false;
+      gameOverScreen.style.display = 'block';
+      screamerVideo.muted = false;
+      screamerVideo.play();
+      screamerVideo.onended = () => {
+        buttons.style.display = 'block';
+      };
+    }
+
+    // Кнопка "Главное меню"
+    function mainMenu() {
+      alert('Вернуться в главное меню. Добавь свою логику здесь!');
+    }
+
+    // Кнопка "Сыграть снова"
+    function restartGame() {
+      gameOverScreen.style.display = 'none';
+      buttons.style.display = 'none';
+      screamerVideo.pause();
+      screamerVideo.currentTime = 0;
+
+      player = { x: 100, y: 100, size: 30, speed: 5 };
+      obstacles = [];
+      gameRunning = true;
+
+      gameLoop();
+    }
+
+    // Запуск игры
+    gameLoop();
+  </script>
+</body>
+</html>
