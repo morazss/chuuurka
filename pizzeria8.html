@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's: Help Wanted</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #1b001b);
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Five Nights at Freddy's: Help Wanted</h1>
+
+        <!-- Сюжет -->
+        <section class="space-y-8">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+            <p class="text-gray-400">
+                FNaF 8: Help Wanted представляет собой игру в виртуальной реальности, где игроки выступают в роли сотрудника службы технической поддержки в компании Fazbear Entertainment. Сюжет разворачивается вокруг многочисленных инцидентов, произошедших в различных пиццериях компании. Игрок выполняет различные задачи, такие как ремонт аниматроников, управление системами безопасности и расследование странных событий. Сюжет развивается через различные мини-игры и видеоролики, которые раскрывают тайны и зловещие события прошлого, связанные с создателями аниматроников и их тёмными экспериментами.
+            </p>
+        </section>
+
+        <!-- Смысл игры -->
+        <section class="py-16">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+            <p class="text-gray-400">
+                В игре игрок должен выжить среди многочисленных аниматроников, которые атакуют ночью. Это включает в себя использование виртуальной реальности для выполнения заданий, таких как починка сломанных механизмов и взаимодействие с различными аниматрониками, которые могут угрожать игроку. Главная цель — управлять ситуацией и выжить, раскрывая всё больше тайн и опасностей, скрытых в пиццерии.
+            </p>
+        </section>
+
+        <!-- Изображения -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="freddy8.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="koridor8.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="office8.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+        </div>
+
+        <!-- Персонажи -->
+<section class="py-16">
+    <h3 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-freddy.png" alt="Кошмарный Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарный Фредди</h3>
+            <p class="text-gray-400">Зловещая версия Фредди с мини-Фредликами на кровати.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-bonnie.png" alt="Кошмарный Бонни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарный Бонни</h3>
+            <p class="text-gray-400">Ночной кошмар, атакующий из левой двери.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-chica.png" alt="Кошмарная Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарная Чика</h3>
+            <p class="text-gray-400">Жуткая версия Чики, атакует из правой двери.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-foxy.png" alt="Кошмарный Фокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарный Фокси</h3>
+            <p class="text-gray-400">Прячется в гардеробе, превращаясь в кошмар.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-fredbear.png" alt="Кошмарный Фредбер" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарный Фредбер</h3>
+            <p class="text-gray-400">Главный антагонист, появляется с пятой ночи.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="plushtrap.png" alt="Плюштрап" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Плюштрап</h3>
+            <p class="text-gray-400">Мини-аниматроник, появляется в бонусной игре между ночами.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare.png" alt="Кошмар" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмар</h3>
+            <p class="text-gray-400">Более жуткая версия Фредбера, появляется в финале.</p>
+        </div>
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="nightmare-balloon-boy.png" alt="Кошмарный Балун Бой" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Кошмарный Балун Бой</h3>
+            <p class="text-gray-400">Ужасающая версия Балун Боя, нападает в режиме ночных кошмаров.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Раздел с полноэкранным видео -->
+        <section class="relative w-screen h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+               <source src="videofnaf4.mp4" type="video/mp4">
+            </video>
+        </section>
+
+    </main>
+</body>
+</html>

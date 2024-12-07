@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's: Sister Location</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #0d0221);
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8 animate-fade-in">Five Nights at Freddy's: Sister Location</h1>
+
+        <!-- Сюжет -->
+        <section class="space-y-8 animate-fade-in">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+            <p class="text-gray-400">
+                В игре **Five Nights at Freddy's: Sister Location** действие происходит в подземном комплексе Circus Baby's Entertainment and Rental. Игрок берет на себя роль Майкла Афтона, который устраивается работать техником. Его задача — выжить, справляясь с различными заданиями и расследуя тёмные тайны, скрывающиеся за этим местом. Игрок будет сталкиваться с аниматрониками, включая Цирковую Бэйби, которые могут быть как опасными, так и неожиданно помогать в раскрытии страшных событий, произошедших в этом месте.
+            </p>
+        </section>
+
+        <!-- Смысл игры -->
+        <section class="py-16 animate-fade-in">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+            <p class="text-gray-400">
+                **Смыслом игры** является выживание в условиях, когда аниматроники активны и могут атаковать игрока. Игрок должен манипулировать системами, выполнять различные задания по починке оборудования, наблюдению за аниматрониками, а также избегать их нападений. В отличие от других частей игры, здесь присутствует больше свободы передвижения и сложных взаимодействий с окружением, что делает процесс игры более динамичным и напряжённым.
+            </p>
+
+            <!-- Изображения -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="freddy5.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="koridor5.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="office5.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- Персонажи -->
+<section id="characters" class="py-16">
+    <h2 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h2>
+    <div id="character-grid" class="grid grid-cols-3 gap-8">
+        <!-- Цирковая Бэйби -->
+        <div id="baby" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" onclick="transformToEnnard()">
+            <img id="baby-img" src="circusbaby.webp" alt="Цирковая Бэйби" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 id="baby-name" class="text-xl font-bold text-pink-300">Цирковая Бэйби</h3>
+            <p id="baby-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">Умная и манипулятивная аниматроника, создающая иллюзию помощи.</p>
+        </div>
+
+        <!-- Баллора -->
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow character" data-character="ballora">
+            <img src="ballora.jpg" alt="Баллора" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Баллора</h3>
+            <p class="text-gray-400">Аниматроник-балерина, чувствительная к звукам, её движение основано на слухе.</p>
+        </div>
+
+        <!-- Фантайм Фредди -->
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow character" data-character="freddy">
+            <img src="funtimefreddy.jpg" alt="Фантайм Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантайм Фредди</h3>
+            <p class="text-gray-400">Аниматроник с куклой Бон-Бон, активно нападающий на игрока, если тот не следит за ним.</p>
+        </div>
+
+        <!-- Фантайм Фокси -->
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow character" data-character="foxy">
+            <img src="funtimefoxy.jpg" alt="Фантайм Фокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантайм Фокси</h3>
+            <p class="text-gray-400">Опасный аниматроник, который появляется в темных местах, реагирует на движение.</p>
+        </div>
+
+        <!-- Мини-Рины -->
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow character" data-character="minireena">
+            <img src="minireenas.jpg" alt="Мини-Рины" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Мини-Рины</h3>
+            <p class="text-gray-400">Маленькие аниматроники, помогающие Баллоре, отвлекают внимание игрока.</p>
+        </div>
+
+        <!-- Бидибабы -->
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow character" data-character="bidybabs">
+            <img src="bidybabs.jpg" alt="Бидибабы" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Бидибабы</h3>
+            <p class="text-gray-400">Мелкие аниматроники, работающие с Цирковой Бэйби, нападают через вентиляцию.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    let isEnnard = false; // Состояние, которое отслеживает, обычная ли это Бэйби или Эннард
+    let glitchInterval;
+
+    function transformToEnnard() {
+        const babyName = document.getElementById('baby-name');
+        const babyImg = document.getElementById('baby-img');
+        const babyDescription = document.getElementById('baby-description');
+        const ennardDiv = document.getElementById('baby'); // Используем div для Цирковой Бэйби
+        const characterGrid = document.getElementById('character-grid');
+        const otherCharacters = document.querySelectorAll('.character');
+
+        if (!isEnnard) {
+            // Скрыть все другие персонажи
+            otherCharacters.forEach(character => character.style.display = 'none');
+
+            // Изменить текст на "Эннард" и сделать его черным
+            babyName.textContent = 'Эннард';
+            babyName.style.color = 'black';
+
+            // Изменить изображение на Эннарда
+            babyImg.src = 'ennard.webp'; // Замените на путь к изображению Эннарда
+
+            // Сделать размер Эннарда 6 ячеек (заполняет 2 строки по 3 элемента)
+            ennardDiv.style.gridColumn = "span 3"; // Ширина на всю строку
+            ennardDiv.style.gridRow = "span 2"; // Высота на 2 строки
+
+            // Начать генерацию глюков в описании с красным цветом
+            glitchInterval = setInterval(() => {
+                babyDescription.innerHTML = `<span class="glitch-text text-red-500">${generateRandomGlitch()}</span>`;
+            }, 100); // Каждые 100 миллисекунд менять текст
+
+            // Применяем класс для отображения прокрутки
+            babyDescription.classList.add('description-container');
+            isEnnard = true; // Установить, что теперь это Эннард
+        } else {
+            // Показать обратно все другие персонажи
+            otherCharacters.forEach(character => character.style.display = 'block');
+
+            // Восстановить обратно в обычную Бэйби
+            babyName.textContent = 'Цирковая Бэйби';
+            babyName.style.color = 'pink'; // Возвращаем оригинальный цвет
+
+            // Вернуть оригинальное изображение
+            babyImg.src = 'circusbaby.webp'; // Замените на путь к изображению обычной Бэйби
+
+            // Сбросить размер
+            ennardDiv.style.gridColumn = "span 1"; // Вернуть обычный размер
+            ennardDiv.style.gridRow = "span 1"; // Вернуть обычную высоту
+
+            // Остановить генерацию глюков
+            clearInterval(glitchInterval);
+            babyDescription.textContent = 'Умная и манипулятивная аниматроника, создающая иллюзию помощи.'; // Возвращаем стандартное описание
+            babyDescription.classList.remove('glitch-text'); // Убираем класс глитч
+            babyDescription.classList.remove('description-container'); // Убираем прокрутку
+
+            isEnnard = false; // Возвращаем в состояние обычной Бэйби
+        }
+    }
+
+    // Функция для генерации случайных глючных символов
+    function generateRandomGlitch() {
+        const characters = ['@', '#', '$', '%', '&', '*', '!', '1', '2', '3', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '<', '>', '/', '\\', '|'];
+        let glitchText = '';
+        for (let i = 0; i < 15; i++) {
+            glitchText += characters[Math.floor(Math.random() * characters.length)];
+        }
+        return glitchText;
+    }
+</script>
+
+        <!-- Раздел с полноэкранным видео -->
+        <section class="relative w-screen h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+               <source src="videofnaf5.mp4" type="video/mp4">
+            </video>
+        </section>
+
+    </main>
+</body>
+</html>

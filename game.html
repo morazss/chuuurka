@@ -46,7 +46,6 @@
 </head>
 <body>
   <canvas id="game"></canvas>
-
   <!-- Скример -->
   <div id="game-over">
     <video id="screamer" autoplay muted playsinline>
@@ -58,7 +57,6 @@
       <button onclick="restartGame()">Сыграть снова</button>
     </div>
   </div>
-
   <script>
     const canvas = document.getElementById('game');
     const ctx = canvas.getContext('2d');
@@ -67,11 +65,9 @@
     const buttons = document.getElementById('buttons');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
     let player = { x: 100, y: 100, size: 30, speed: 5 };
     let obstacles = [];
     let gameRunning = true;
-
     // Генерация препятствий
     function createObstacle() {
       obstacles.push({
@@ -81,25 +77,19 @@
         speed: 2 + Math.random() * 3
       });
     }
-
     setInterval(createObstacle, 1000);
-
     // Игровой цикл
     function gameLoop() {
       if (!gameRunning) return;
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       // Рисуем игрока
       ctx.fillStyle = 'white';
       ctx.fillRect(player.x, player.y, player.size, player.size);
-
       // Рисуем препятствия
       ctx.fillStyle = 'red';
       obstacles.forEach((obs, index) => {
         obs.x -= obs.speed;
         ctx.fillRect(obs.x, obs.y, obs.size, obs.size);
-
         // Проверка столкновения
         if (
           player.x < obs.x + obs.size &&
@@ -109,16 +99,13 @@
         ) {
           endGame();
         }
-
         // Удаление препятствий за пределами экрана
         if (obs.x + obs.size < 0) {
           obstacles.splice(index, 1);
         }
       });
-
       requestAnimationFrame(gameLoop);
     }
-
     // Управление игроком
     window.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowUp') player.y -= player.speed;
@@ -126,7 +113,6 @@
       if (e.key === 'ArrowLeft') player.x -= player.speed;
       if (e.key === 'ArrowRight') player.x += player.speed;
     });
-
     // Конец игры
     function endGame() {
       gameRunning = false;
@@ -137,26 +123,21 @@
         buttons.style.display = 'block';
       };
     }
-
     // Кнопка "Главное меню"
     function mainMenu() {
       alert('Вернуться в главное меню. Добавь свою логику здесь!');
     }
-
     // Кнопка "Сыграть снова"
     function restartGame() {
       gameOverScreen.style.display = 'none';
       buttons.style.display = 'none';
       screamerVideo.pause();
       screamerVideo.currentTime = 0;
-
       player = { x: 100, y: 100, size: 30, speed: 5 };
       obstacles = [];
       gameRunning = true;
-
       gameLoop();
     }
-
     // Запуск игры
     gameLoop();
   </script>

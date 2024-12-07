@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's: Pizzeria Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #3a0a45);
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out;
+        }
+        .glitch-text {
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: -1px 0 red, 1px 0 blue; transform: translate(1px, 1px); }
+            50% { text-shadow: -1px 0 blue, 1px 0 red; transform: translate(-1px, -1px); }
+            100% { text-shadow: -1px 0 red, 1px 0 blue; transform: translate(1px, 1px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8 animate-fade-in">Five Nights at Freddy's: Pizzeria Simulator</h1>
+
+        <!-- Сюжет -->
+        <section class="space-y-8 animate-fade-in">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+            <p class="text-gray-400">
+                В игре **Five Nights at Freddy's: Pizzeria Simulator** игрок принимает участие в управлении пиццерией, где его задача - выжить в условиях, когда аниматроники, созданные для развлечений, начинают проявлять агрессию. Игроку предстоит работать с оборудованием, справляться с опасностями, одновременно следя за своими бизнес-показателями и безопасностью.
+            </p>
+        </section>
+
+        <!-- Смысл игры -->
+        <section class="py-16 animate-fade-in">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+            <p class="text-gray-400">
+                **Смыслом игры** является управление пиццерией, в то время как аниматроники пытаются разрушить ваш бизнес. Игрок должен следить за состоянием оборудования, выполнять различные задачи и избегать нападений аниматроников, одновременно стараясь заработать достаточно денег, чтобы вывести свою пиццерию на новый уровень.
+            </p>
+
+            <!-- Изображения -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="freddy5.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="koridor5.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="office5.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- Персонажи -->
+        <section id="characters" class="py-16">
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+                <!-- Рок-звезда Фредди -->
+                <div id="rockstar_freddy" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" onclick="transformToLefty()">
+                    <img id="rockstar_freddy-img" src="rockstar_freddy.jpg" alt="Рок-звезда Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 id="rockstar_freddy-name" class="text-xl font-bold text-pink-300">Рок-звезда Фредди</h3>
+                    <p id="rockstar_freddy-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">Обновленная версия Фредди с ярким рок-стилем, гитарой и агрессивным поведением.</p>
+                </div>
+                
+                <!-- Левша (изначально скрыт) -->
+                <div id="lefty" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style="display: none;" onclick="transformToRockstarFreddy()">
+                    <img id="lefty-img" src="lefty.jpg" alt="Левша" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 id="lefty-name" class="text-xl font-bold text-pink-300">Левша</h3>
+                    <p id="lefty-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">Аниматроник-помощник, обеспечивающий работу и безопасность пиццерии.</p>
+                </div>
+                
+                <script>
+                    let isLefty = false; // Состояние, которое отслеживает, обычный ли это Рок-звезда Фредди или Левша
+                
+                    function transformToLefty() {
+                        const rockstarFreddy = document.getElementById('rockstar_freddy');
+                        const lefty = document.getElementById('lefty');
+                        
+                        if (!isLefty) {
+                            // Скрыть Рок-звезду Фредди
+                            rockstarFreddy.style.display = 'none';
+                
+                            // Показать Левшу
+                            lefty.style.display = 'block';
+                
+                            // Изменить состояние на Левша
+                            isLefty = true;
+                        }
+                    }
+                
+                    function transformToRockstarFreddy() {
+                        const rockstarFreddy = document.getElementById('rockstar_freddy');
+                        const lefty = document.getElementById('lefty');
+                
+                        // Скрыть Левшу
+                        lefty.style.display = 'none';
+                
+                        // Показать Рок-звезду Фредди
+                        rockstarFreddy.style.display = 'block';
+                
+                        // Изменить состояние на Рок-звезда Фредди
+                        isLefty = false;
+                    }
+                </script>
+        
+                <!-- Скрап Бейби -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="scrap_baby.jpg" alt="Скрап Бейби" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Скрап Бейби</h3>
+                    <p class="text-gray-400">Разрушенная версия Цирковой Бэйби, агрессивная и опасная для игрока.</p>
+                </div>
+        
+                <!-- Скраптрап -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="scraptrap.jpg" alt="Скраптрап" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Скраптрап</h3>
+                    <p class="text-gray-400">Разрушенная версия Уильяма Афтона, воплощение злого духа.</p>
+                </div>
+        
+                <!-- Расплавленный Фредди -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="melted_freddy.jpg" alt="Расплавленный Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Расплавленный Фредди</h3>
+                    <p class="text-gray-400">Поврежденная версия Фредди, опасна для игрока в силу нестабильности.</p>
+                </div>
+        
+                <!-- Счастливая лягушка -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="happy_frog.jpg" alt="Счастливая лягушка" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Счастливая лягушка</h3>
+                    <p class="text-gray-400">Добродушный аниматроник, предназначенный для украшения пиццерии.</p>
+                </div>
+        
+                <!-- Медведь Недд -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="nedd_bear.jpg" alt="Медведь Недд" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Медведь Недд</h3>
+                    <p class="text-gray-400">Дружелюбный, но скрывающий опасность аниматроник с добрым внешним видом.</p>
+                </div>
+        
+                <!-- Свин-Портной -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="swine_tailor.jpg" alt="Свин-Портной" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Свин-Портной</h3>
+                    <p class="text-gray-400">Аниматроник с механическими частями, появляется с определенной целью.</p>
+                </div>
+        
+                <!-- Конфетный кадет -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="candy_cadet.jpg" alt="Конфетный кадет" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Конфетный кадет</h3>
+                    <p class="text-gray-400">Маленький аниматроник с милым внешним видом, скрывает опасность.</p>
+                </div>
+        
+                <!-- Охранная марионетка -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="security_puppet.jpg" alt="Охранная марионетка" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Охранная марионетка</h3>
+                    <p class="text-gray-400">Версия марионетки, охраняющая пиццерию и создающая угрозу для игрока.</p>
+                </div>
+        
+                <!-- Музыкальный парень -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="musical_man.jpg" alt="Музыкальный парень" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Музыкальный парень</h3>
+                    <p class="text-gray-400">Аниматроник, создающий сложности для игрока, связанные с музыкой.</p>
+                </div>
+        
+                <!-- Эль Чип -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="el_chip.jpg" alt="Эль Чип" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Эль Чип</h3>
+                    <p class="text-gray-400">Мексиканский аниматроник с характерным акцентом, влияющий на ход игры.</p>
+                </div>
+        
+                <!-- Весёла Чика -->
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="festive_chica.jpg" alt="Весёла Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Весёла Чика</h3>
+                    <p class="text-gray-400">Яркая и забавная версия Чики, скрывает угрозу для игрока.</p>
+                </div>
+        
+            </div>
+        
+
+    </main>
+</body>
+</html>

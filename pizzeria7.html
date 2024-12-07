@@ -1,0 +1,290 @@
+<!DOCTYPE html> 
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's: Ultimate Custom Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #1b001b);
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Five Nights at Freddy's: Ultimate Custom Night</h1>
+
+        <!-- Сюжет -->
+        <section class="space-y-8">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+            <p class="text-gray-400">
+                Игрок оказывается в ловушке, созданной Уильямом Афтоном (Спрингтрапом), где ему предстоит противостоять 50 аниматроникам из всех частей серии. Это персональный "ад", где враги объединены, чтобы вечно мучить главного героя.
+            </p>
+        </section>
+
+        <!-- Смысл игры -->
+        <section class="py-16">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+            <p class="text-gray-400">
+                Игроку нужно выжить с полуночи до 6 утра, управляя офисом и системами безопасности. Можно настроить сложность каждого аниматроника от 0 до 20 уровня. Успех зависит от внимания, стратегии и скорости реакции.
+            </p>
+        </section>
+
+        <!-- Изображения -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="freddy7.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="koridor7.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="office7.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+        </div>
+
+        <!-- Персонажи -->
+        <section class="py-16">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фредди</h3>
+                    <p class="text-gray-400">Ходит слева, но его видно только на мониторе. Каждый раз поднимая планшет, закрывайте левую дверь, и он не нападёт.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Бонни</h3>
+                    <p class="text-gray-400">Сторожит Фокси. Не проверяйте его, если у вас на столе есть его фигурка.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Чика</h3>
+                    <p class="text-gray-400">Гремит посудой, как перестанет, переключитесь на камеру с музыкальной шкатулкой и поменяйте музыку, если опять гремит - то вы в безопасности. Постоянная муз. шкатулка также не даст ей напасть.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фокси</h3>
+                    <p class="text-gray-400">Собирается по частям у вас в офисе. Если у вас на столе его фигурка - проверьте его на одной из камер.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Той Фредди</h3>
+                    <p class="text-gray-400">Играет в FNaF (Five Nights at Mr. Hugs :) ) на одной из камер. Если видите на его мониторе пылесос с руками, нажимайте на кнопку, в какой он комнате (по ходу разберетесь).</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Той Бонни</h3>
+                    <p class="text-gray-400">Как появится, надевайте маску. Тут на реакцию.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Той Чика</h3>
+                    <p class="text-gray-400">То же самое что с предыдущим.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Мангл</h3>
+                    <p class="text-gray-400">Лезет по вентиляции и долго стоит в конце. Чтобы закрыть ей дорогу, не забудьте про павер-генератор, ведь при закрытой венте быстро улетает энергия.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">ББ</h3>
+                    <p class="text-gray-400">Вылазит из правой вентиляции. Чтобы прогнать. В случае неудачи выключает фонарик.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">ЖЖ</h3>
+                    <p class="text-gray-400">То же самое что с ББ, только отключает двери и вентиляции.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Сломанная Чика</h3>
+                    <p class="text-gray-400">Лезет по вентиляции, останавливайте заслонками. Когда доберется, загородит вентиляцию другим аниматроникам (бугага :) ), кроме Мангл. Как захочет, напугает.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Сломанный Бонни</h3>
+                    <p class="text-gray-400">Внезапно появляется в офисе, надевайте маску. Опять же на реакцию.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Марионетка</h3>
+                    <p class="text-gray-400">На 4 камере заводить шкатулку. Постоянная музыкальная шкатулка на кнопку 5 поможет этого не делать, забирая электричество.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Золотой Фредди (Фредбир)</h3>
+                    <p class="text-gray-400">Появляется в офисе. Быстро надевайте маску или поднимайте планшет.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Спрингтрап</h3>
+                    <p class="text-gray-400">Лезет по вентиляции, и плевать он хотел на заслонки. В итоге он будет смотреть на вас с верхней вентиляции. Закрыть её до стука.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фантом Мангл</h3>
+                    <p class="text-gray-400">Появляется в планшете. Срочно закрывайте его иначе она появится в офисе и начнёт шуметь.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фантом Фредди</h3>
+                    <p class="text-gray-400">Материализуется прямо перед вами. Светите фонариком чтобы избежать этого, иначе схватите не смертельный, но скример.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фантом ББ</h3>
+                    <p class="text-gray-400">Та же ситуёвина, что и с мангл, только скример :).</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарный Фредди</h3>
+                    <p class="text-gray-400">Медвежата появляются перед вами. Прогоняйте их фонариком. А если их станет слишком много, то придёт сам Фёдор.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарный Бонни</h3>
+                    <p class="text-gray-400">Копите монеты и покупайте его игрушку на камере 7, иначе он вас убьёт. (Боже что популярность делает с людьми).</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарный Фредбир</h3>
+                    <p class="text-gray-400">Приходит слева со страшным смешком. Его глаза видно в левой двери. Закройте дверь до стука.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмар</h3>
+                    <p class="text-gray-400">Тоже самое, только справа.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Джек-о-Чика</h3>
+                    <p class="text-gray-400">Материализуется на камерах 1 и 2. Проверяйте их, по возможности. Если она начала появляться, закройте обе двери, чтобы она пропала. Но это не сработает, если в комнате больше 100 градусов.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарная Мангл</h3>
+                    <p class="text-gray-400">Покупайте её игрушку, где и игрушку Бонни.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарионни</h3>
+                    <p class="text-gray-400">Не держите курсор рядом с ним.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Кошмарный ББ</h3>
+                    <p class="text-gray-400">Не светите на него фонариком, но если привстал, самое время.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Старик Рыбак</h3>
+                    <p class="text-gray-400">Когда включается мини-игра, нажмите С, чтобы поймать рыбку. Иначе вы не сможете открыть планшет в ближайшие 10 секунд.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Бейби (Крошка)</h3>
+                    <p class="text-gray-400">Купите её игрушку, где и игрушку Мангл.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Баллора</h3>
+                    <p class="text-gray-400">Приходит слева и справа. Можно услышать только по звукам музыкальной шкатулки. Закрывайте дверь слева или справа, в зависимости от мелодии.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фантайм Фокси</h3>
+                    <p class="text-gray-400">На камере 6 на табличке написано время шоу. Вот в это время и заглядывайте на эту камеру, иначе лисыч атакует.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Эннард</h3>
+                    <p class="text-gray-400">Ползает по вентиляции, но на камере он иногда пропадает. Когда будет готов вылезать, вы услышите скрип. Закрывайте вентиляцию до стука.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Мусор и банда</h3>
+                    <p class="text-gray-400">Будут мешать: загораживать камеру, выпрыгивать. Не обращайте внимания и сосредотачивайтесь на игре.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Хелпи (Помощничек)</h3>
+                    <p class="text-gray-400">Появляется в офисе. Быстро нажмите на него, иначе будет скример с клаксоном.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Счастливая жабка</h3>
+                    <p class="text-gray-400">Лезет по трубам, но легко приманивается аудио-приманкой. Ей всё равно на нагреватель.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Мр. Гиппократыч</h3>
+                    <p class="text-gray-400">Лезет по трубам, легко приманивается аудио-приманкой. Используйте нагреватель, чтобы прогнать подальше. После скримера читает лекцию.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Свин-Портной</h3>
+                    <p class="text-gray-400">Лезет по трубам, но легко приманивается аудио-приманкой. Используйте нагреватель, чтобы прогнать подальше.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Медведь Недд</h3>
+                    <p class="text-gray-400">Лезет по трубам, но не всегда идёт на аудио-приманку, так что используйте нагреватель.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Слон Орвилль</h3>
+                    <p class="text-gray-400">Лезет по трубам, игнорирует аудио-приманку. Используйте нагреватель, чтобы его прогнать.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Рок-звезда Фредди</h3>
+                    <p class="text-gray-400">Просит внести 5 монет. При отказе нападает. Если не хотите тратить монеты, используйте нагреватель — он подумает, что вы заплатили.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Рок-звезда Бонни</h3>
+                    <p class="text-gray-400">Когда он начинает смотреть на вас, быстро ищите его гитару на камерах, иначе он нападёт.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Рок-звезда Чика</h3>
+                    <p class="text-gray-400">Приходит слева и справа. Мониторьте эти камеры. У вас на полу стоит табличка "мокрый пол". Двойной клик, чтобы переставить её к другой двери. Пока табличка стоит со стороны, откуда идёт курица, всё в порядке.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Рок-звезда Фокси</h3>
+                    <p class="text-gray-400">Увеличивает шанс нападения после того, как вы тронули его попугая, чтобы получить бонус. Прям русская рулетка.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Музыкальный чел</h3>
+                    <p class="text-gray-400">Если в комнате громко, то он начинает стучать тарелками (не посудой, а инструментами), постепенно разгоняясь и пугая вас. Если слышите звук тарелок, убирайте все источники шума.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Эль Чип</h3>
+                    <p class="text-gray-400">Рекламирует своё кафе, потому что Скотти не дал денег на сольную игру. Закрывайте его рекламу, и он вас не напугает.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фантайм Чика</h3>
+                    <p class="text-gray-400">Фоткает вас, из-за чего весь экран начинает плыть. Ничего не поделаешь, к сожалению.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Расплавленный Фредди</h3>
+                    <p class="text-gray-400">Лезет по вентиляции, когда будет вылезать, засмеётся. Закрывайте вентиляцию до повторного смеха и стука.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Сломанная Бейби</h3>
+                    <p class="text-gray-400">Появляется перед вами. Если пошевелится, бейте током, но при этом тратится 1% заряда.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Афтон г*ндон</h3>
+                    <p class="text-gray-400">Приходит с правой вентиляции с треском и фанфарами, мерцанием света и звуком ведра с болтами. Он появляется один раз, но успеете ли вы закрыть вентиляцию за долю секунды после этого?</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Левша (Ловушка Естественного Вмещения Шествия и Активации)</h3>
+                    <p class="text-gray-400">Начинает ходить по зданию, когда становится шумно или жарко. Усмирить его может только постоянная музыкальная шкатулка.</p>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Парень на другом конце трубки (Телефонный парень)</h3>
+                    <p class="text-gray-400">Названивает, как бухая бывшая. Найдите кнопку "Mute Call" и оборвите звонок.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел с полноэкранным видео -->
+        <section>
+            <iframe class="w-full h-[480px] neon-shadow" src="https://www.youtube.com/embed/UWtzRg_3Rl0?controls=0" title="Youtube Трейлер"></iframe>
+        </section>
+    </main>
+    
+</body>
+</html>

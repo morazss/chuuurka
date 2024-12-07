@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #0d0221);
+            color: #e0e0e0;
+            padding-top: 80px; /* Добавляем отступ для фиксированной навигации */
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Five Nights at Freddy's 3</h1>
+
+        <!-- Сюжет -->
+<section class="space-y-8">
+    <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+    <p class="text-gray-300">
+        Действие FNaF 3 происходит через 30 лет после событий первой и второй частей, в заброшенном аттракционе Freddy Fazbear's Pizzeria Simulator, который использует старые элементы из пиццерий. Игрок выступает в роли ночного охранника Скотта, работающего в этом страшном парке аттракционов. На фоне этой заброшенной локации происходит нечто странное: аниматроники, включая новое существо по имени Springtrap, начинают проявлять активность.
+    </p>
+    <p class="text-gray-300">
+        Через аудиофайлы и сообщения игрок постепенно раскрывает тайны, связанные с исчезновением детей и деятельностью Уильяма Афтона, который, как выясняется, стал частью страшного нового аниматроника.
+    </p>
+</section>
+
+<!-- Смысл игры -->
+<section class="py-16">
+    <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+    <p class="text-gray-300">
+        Цель игры — выжить в течение пяти ночей, следя за аниматрониками с помощью камер видеонаблюдения, защищаясь от атак с помощью ограниченных ресурсов (например, вентиляции и звуковых устройств). Игрок должен поддерживать систему безопасности и сдерживать аниматроников, включая Springtrap, который может атаковать, если его не отвлечь.
+    </p>
+
+    <!-- Изображения -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div class="relative w-full h-64 overflow-hidden rounded-lg">
+            <img src="freddy2.jpeg" alt="Сцена Фредди 2" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+        </div>
+        <div class="relative w-full h-64 overflow-hidden rounded-lg">
+            <img src="corridor2.jpeg" alt="Коридор 2" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+        </div>
+        <div class="relative w-full h-64 overflow-hidden rounded-lg">
+            <img src="office2.jpeg" alt="Офис 2" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+        </div>
+    </div>
+</section>
+
+        <!-- Персонажи -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <!-- Первая ячейка с Springtrap1, которая будет активировать другие персонажи -->
+    <div id="springtrap1" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow cursor-pointer" onclick="showPhantoms()" style=" height: 300px;">
+        <img src="springtrap.jpg" alt="Springtrap" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+        <h3 class="text-xl font-bold text-pink-300">Springtrap</h3>
+        <p class="text-gray-300">Главный антагонист, аниматроник, в котором скрыта душа Уильяма Афтона. Он часто появляется в разных частях пиццерии и может атаковать игрока, если его не остановить.</p>
+    </div>
+</div>
+
+<!-- Персонажи, которые будут скрываться и показываться -->
+<div id="phantom-characters" class="grid grid-cols-1 sm:grid-cols-2 gap-8 hidden mt-8">
+    <!-- Первый столбик (4 персонажа) -->
+    <div class="space-y-8">
+        <div id="springtrap2" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow cursor-pointer" style=" height: 300px;" onclick="showPhantoms()">
+            <img src="springtrap.jpg" alt="Springtrap" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Springtrap</h3>
+            <p class="text-gray-300">Главный антагонист, аниматроник, в котором скрыта душа Уильяма Афтона. Он часто появляется в разных частях пиццерии и может атаковать игрока, если его не остановить.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_freddy.jpg" alt="Фантом Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Фредди</h3>
+            <p class="text-gray-300">Призрачная версия Фредди, вызывает сбои в системах, нарушая работу камер и видеонаблюдения.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_bonnie.jpg" alt="Фантом Бонни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Бонни</h3>
+            <p class="text-gray-300">Появляется в камерах и вызывает сбои в системе безопасности, мешая игроку следить за аниматрониками.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_chica.jpg" alt="Фантом Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Чика</h3>
+            <p class="text-gray-300">Нарушает работу вентиляции и камер, создавая помехи и замедляя реакцию игрока.</p>
+        </div>
+    </div>
+
+    <!-- Второй столбик (4 персонажа) -->
+    <div class="space-y-8">
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_foxy.jpg" alt="Фантом Фокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Фокси</h3>
+            <p class="text-gray-300">Воздействует на камеры видеонаблюдения, создавая помехи и сбои в системе.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_puppet.jpg" alt="Фантом Марионетки" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Марионетки</h3>
+            <p class="text-gray-300">Появляется с помехами на экранах, влияя на системы безопасности и создавая трудности для игрока.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="phantom_balloon_boy.jpg" alt="Фантом Балун Бой" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Фантом Балун Бой</h3>
+            <p class="text-gray-300">Сбивает фонарик, делая игрока уязвимым к атакам других аниматроников.</p>
+        </div>
+
+        <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style=" height: 300px;">
+            <img src="shadow_freddy.jpg" alt="Шэдоу Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Шэдоу Фредди</h3>
+            <p class="text-gray-300">Редкий призрачный аниматроник, появляется в камерах и не атакует, но вызывает напряжение своим мистическим присутствием.</p>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <script>
+        let isSpringtrap2Visible = false;
+
+        function showPhantoms() {
+            const springtrap1 = document.getElementById('springtrap1');
+            const springtrap2 = document.getElementById('springtrap2');
+            const phantomCharacters = document.getElementById('phantom-characters');
+
+            if (!isSpringtrap2Visible) {
+                springtrap1.classList.add('hidden'); // Скрыть Springtrap1
+                springtrap2.classList.remove('hidden'); // Показать Springtrap2
+                phantomCharacters.classList.remove('hidden'); // Показать остальных персонажей
+                isSpringtrap2Visible = true;
+            } else {
+                springtrap1.classList.remove('hidden'); // Показать Springtrap1
+                springtrap2.classList.add('hidden'); // Скрыть Springtrap2
+                phantomCharacters.classList.add('hidden'); // Скрыть остальных персонажей
+                isSpringtrap2Visible = false;
+            }
+        }
+    </script>
+
+    <!-- Раздел с полноэкранным видео -->
+    <section class="relative w-screen h-screen">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+           <source src="videofnaf3.mp4" type="video/mp4">
+        </video>
+    </section>
+
+</body>
+</html>

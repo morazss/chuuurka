@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's: Security Breach</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #000000, #1b001b);
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
+        }
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <nav class="flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
+            <ul class="flex gap-6">
+                <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
+                <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
+                <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24 p-8">
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Five Nights at Freddy's: Security Breachd</h1>
+
+        <!-- Сюжет -->
+        <section class="space-y-8">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
+            <p class="text-gray-400">
+                В игре Five Nights at Freddy's: Security Breach игрок управляет мальчиком по имени Грегори, который застрял на ночь в огромном торговом центре Freddy Fazbear’s Mega Pizzaplex. С помощью аниматроника Фредди, который неожиданно становится союзником, Грегори должен исследовать комплекс, избегать нападений других аниматроников и раскрывать мрачные секреты этого места. В ходе игры, он сталкивается с новой угрозой — Ванни, загадочной женщиной, и с ожившим сущностью по имени Бернтрап.
+            </p>
+        </section>
+
+        <!-- Смысл игры -->
+        <section class="py-16">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
+            <p class="text-gray-400">
+                Игрок свободно перемещается по обширному торговому комплексу, выполняя задания, избегая аниматроников, решая головоломки и скрываясь от врагов. Игра включает элементы выживания и исследования, а также предоставляет несколько концовок в зависимости от принятых игроком решений. Основная цель — выжить до рассвета и выяснить, что происходит в Пиццерии.
+            </p>
+        </section>
+
+        <!-- Изображения -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="freddy9.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="koridor9.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+            <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                <img src="office9.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+            </div>
+        </div>
+
+        <!-- Персонажи -->
+<section class="py-16">
+    <h3 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="glamrock-freddy.png" alt="Глэмрок Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Глэмрок Фредди</h3>
+            <p class="text-gray-400">Обновленная версия Фредди, имеющая яркий и стильный вид с элементами рок-звезды. Помогает Грегори в выполнении различных заданий.</p>
+        </div>
+
+        <!-- Монти -->
+        <div id="Monti" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" onclick="transformToGlamrockBonnie()">
+            <img id="Monti-img" src="Monti.jpg" alt="Монти" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 id="Monti-name" class="text-xl font-bold text-pink-300">Монти</h3>
+            <p id="Monti-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">аниматроник-аллигатор с элементами рок-звезды. Агрессивен и быстро реагирует на присутствие Грегори, его цель — поймать и уничтожить.</p>
+        </div>
+
+        <!-- Глэмрок Бонни (изначально скрыт) -->
+        <div id="GlamrockBonnie" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" style="display: none;" onclick="transformToMonti()">
+            <img id="GlamrockBonnie-img" src="GlamrockBonnie.jpg" alt="Глэмрок Бонни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 id="GlamrockBonnie-name" class="text-xl font-bold text-pink-300">Глэмрок Бонни</h3>
+            <p id="GlamrockBonnie-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">Глэмрок Бонни упоминается в игре FNaF: Security Breach, но фактически отсутствует. Ранее он был частью рок-группы, однако его роль в игровом процессе была заменена Глэмрок Фредди.</p>
+        </div>
+        
+        <script>
+            let isGlamrockBonnie = false; // Состояние, которое отслеживает, обычный ли это Монти или Глэмрок Бонни
+        
+            function transformToGlamrockBonnie() {
+                const Monti = document.getElementById('Monti');
+                const GlamrockBonnie = document.getElementById('GlamrockBonnie');
+                
+                if (!isGlamrockBonnie) {
+                    // Скрыть Монти
+                    Monti.style.display = 'none';
+        
+                    // Показать Глэмрок Бонни
+                    GlamrockBonnie.style.display = 'block';
+        
+                    // Изменить состояние на Глэмрок Бонни
+                    isGlamrockBonnie = true;
+                }
+            }
+            
+            function transformToMonti() {
+                const Monti = document.getElementById('Monti');
+                const GlamrockBonnie = document.getElementById('GlamrockBonnie');
+        
+                // Скрыть Глэмрок Бонни
+                GlamrockBonnie.style.display = 'none';
+        
+                // Показать Монти
+                Monti.style.display = 'block';
+        
+                // Изменить состояние на Монти
+                isGlamrockBonnie = false;
+            }
+        </script>
+        
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="roxanne.png" alt="Рокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Рокси</h3>
+            <p class="text-gray-400">аниматроник-волк с роковой внешностью. Преследует Грегори с доминирующим поведением, часто становясь угрозой для игрока.</p>
+        </div>
+        
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="glamrock-chica.png" alt="Глэмрок Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Чика</h3>
+            <p class="text-gray-400">Чика возвращается в обновленном виде, став более опасной. Атакует Грегори в темных зонах, её поведение непредсказуемо и агрессивно.</p>
+        </div>
+        
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="sundrop.png" alt="Спидстра" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Спидстра</h3>
+            <p class="text-gray-400">Яркий и игривый аниматроник, который появляется днем. Следит за детьми в детской зоне, создавая веселую атмосферу и поддерживая порядок.</p>
+        </div>
+        
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="moondrop.png" alt="Лунар" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Лунар</h3>
+            <p class="text-gray-400">Аниматроник, который активируется ночью. Превращается в агрессивного и опасного противника, став угрозой для игрока, когда наступает тьма.</p>
+        </div>
+
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="vanney.png" alt="Ванни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Ванни</h3>
+            <p class="text-gray-400">Новый антагонист, носит белую маску с ушами кролика. Преследует Грегори с агрессивным и непредсказуемым поведением, её мотивы остаются загадкой, но она является основной угрозой.</p>
+        </div>
+        
+        <div class="bg-purple-900 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+            <img src="burntrap.png" alt="Спрингтрап / Бернтрап" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+            <h3 class="text-xl font-bold text-pink-300">Спрингтрап / Бернтрап</h3>
+            <p class="text-gray-400">Бернтрап — возвращение Уильяма Афтона в форме аниматроника. Это воплощение ужаса, которое атакует и причиняет вред Грегори.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Раздел с полноэкранным видео -->
+        <section class="relative w-screen h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+               <source src="videofnaf4.mp4" type="video/mp4">
+            </video>
+        </section>
+
+    </main>
+</body>
+</html>

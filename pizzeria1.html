@@ -12,15 +12,25 @@
             background: linear-gradient(to bottom, #000000, #0d0221);
             color: #e0e0e0;
         }
-        h1, h2 {
+        h1, h2, h3 {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
         }
         a:hover {
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
         }
-        .highlight {
-            color: #ff00ff;
-            font-weight: bold;
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out;
         }
     </style>
 </head>
@@ -28,53 +38,203 @@
     <!-- Навигационная панель -->
     <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
         <nav class="flex justify-between items-center p-4">
-            <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            <div class="flex items-center gap-4">
+                <img src="pizza-logo.png" alt="Пицца" class="w-12 h-12">
+                <a href="index.html" class="text-2xl font-bold text-pink-300">FnafWWorld</a>
+            </div>
             <ul class="flex gap-6">
                 <li><a href="contact.html" class="hover:text-blue-500">Связь с нами</a></li>
                 <li><a href="pizzeria.html" class="hover:text-blue-500">Пиццерии</a></li>
                 <li><a href="lor.html" class="hover:text-blue-500">Сюжет</a></li>
+                <li><a href="game.html" class="hover:text-blue-500">Игра</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Основной контент -->
     <main class="pt-24 p-8">
-        <h1 class="text-4xl text-pink-300 font-bold mb-8">Freddy Fazbear's Pizza</h1>
+        <h1 class="text-4xl text-pink-300 font-bold mb-8">Five Nights at Freddy's</h1>
 
-        <!-- Описание пиццерии -->
+        <!-- Сюжет -->
         <section class="space-y-8">
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Сюжет</h3>
             <p class="text-gray-400">
-                Добро пожаловать в легендарную пиццерию <span class="highlight">Freddy Fazbear's Pizza</span>, где радость для детей и взрослых сочетается с тайной. Это место, наполненное звуками смеха, пиццей и... чем-то ещё.
-            </p>
-            <div class="relative w-full h-64 overflow-hidden rounded-lg mb-8">
-                <img src="images/freddy_fazbear.jpg" alt="Freddy Fazbear's Pizza" class="absolute inset-0 w-full h-full object-cover">
-            </div>
-            <h2 class="text-3xl font-bold text-pink-300">Особенности</h2>
-            <ul class="list-disc pl-8 text-gray-400">
-                <li>Аниматроники, выступающие на сцене: <span class="highlight">Фредди</span>, <span class="highlight">Бонни</span>, <span class="highlight">Чика</span> и <span class="highlight">Фокси</span>.</li>
-                <li>Самая вкусная пицца в городе!</li>
-                <li>Уютная атмосфера для празднования дней рождения и других событий.</li>
-            </ul>
-        </section>
-
-        <!-- История -->
-        <section class="py-16">
-            <h2 class="text-3xl font-bold text-pink-300 mb-4">История</h2>
-            <p class="text-gray-400">
-                Freddy Fazbear's Pizza открылась как место для веселья и радости, но за её кулисами скрываются жуткие тайны. Говорят, что аниматроники оживают ночью, и охранники, работавшие здесь, сталкивались с необъяснимыми событиями. Вы готовы узнать правду?
+                Five Nights at Freddy's разворачивается в пиццерии Freddy Fazbear’s Pizza, где игрок берёт на себя роль ночного охранника Майка Шмидта. Ваша задача — продержаться пять ночей, управляя системами наблюдения и защищаясь от оживших аниматроников.
             </p>
         </section>
 
-        <!-- Контакты -->
+        <!-- Смысл игры -->
         <section class="py-16">
-            <h2 class="text-3xl font-bold text-pink-300 mb-4">Как найти нас</h2>
+            <h3 class="text-3xl font-bold text-pink-300 mb-4">Смысл игры</h3>
             <p class="text-gray-400">
-                Мы находимся по адресу: Городская площадь, дом 5. Заходите и наслаждайтесь пиццей!
+                Смысл Five Nights at Freddy's заключается в выживании. Игрок выступает в роли ночного охранника, который должен продержаться с полуночи до 6 утра, следя за аниматрониками через камеры наблюдения и используя ограниченные ресурсы (двери, свет, энергию). Цель — избежать столкновения с ожившими аниматрониками, которые несут смертельную угрозу. Игровой процесс построен на управлении вниманием, стратегическом использовании ресурсов и ощущении постоянного напряжения.
             </p>
-            <div class="relative w-full h-64 overflow-hidden rounded-lg">
-                <img src="images/map.jpg" alt="Карта расположения пиццерии" class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Изображения -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="freddy.jpeg" alt="Сцена Фредди" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="koridor.jpeg" alt="Коридор" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
+                <div class="relative w-full h-64 overflow-hidden rounded-lg">
+                    <img src="office.jpeg" alt="Офис" class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105">
+                </div>
             </div>
         </section>
+
+        <!-- Персонажи -->
+        <section id="characters" class="py-16">
+            <h2 class="text-3xl font-bold text-pink-300 mb-4">Персонажи</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="freddy" class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow" onclick="transformToGoldenFreddy()">
+                    <img id="freddy-img" src="freddygg.webp" alt="Фредди" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 id="freddy-name" class="text-xl font-bold text-pink-300">Фредди Фазбер</h3>
+                    <p id="freddy-description" class="text-gray-400 overflow-auto text-ellipsis whitespace-normal max-w-xs mx-auto">Коричневый медведь, главный аниматроник, активен в поздние ночи.</p>
+                </div>
+                
+                <style>
+                    /* Добавляем анимацию глитч-эффекта */
+                    @keyframes glitch {
+                        0% {
+                            transform: translate(0);
+                            text-shadow: 2px 2px 0 red, -1px -1px 0 blue, 1px -1px 0 green;
+                        }
+                        10% {
+                            transform: translate(-2px, 1px);
+                            text-shadow: -2px 2px 0 red, 1px -1px 0 blue, 1px 1px 0 green;
+                        }
+                        20% {
+                            transform: translate(2px, -1px);
+                            text-shadow: -2px -2px 0 red, -1px 1px 0 blue, 1px 1px 0 green;
+                        }
+                        30% {
+                            transform: translate(-2px, 2px);
+                            text-shadow: -3px 3px 0 red, 2px -2px 0 blue, -1px -1px 0 green;
+                        }
+                        40% {
+                            transform: translate(2px, 0);
+                            text-shadow: 2px -2px 0 red, 1px 1px 0 blue, -1px 1px 0 green;
+                        }
+                        50% {
+                            transform: translate(0);
+                            text-shadow: 2px 2px 0 red, -1px -1px 0 blue, 1px -1px 0 green;
+                        }
+                        100% {
+                            transform: translate(0);
+                            text-shadow: 2px 2px 0 red, -1px -1px 0 blue, 1px -1px 0 green;
+                        }
+                    }
+                
+                    /* Применяем анимацию к описанию */
+                    .glitch-text {
+                        font-family: 'Press Start 2P', cursive;
+                        color: red;
+                        display: inline-block;
+                        animation: glitch 1s infinite;
+                        white-space: normal; /* Текст может переноситься на новую строку */
+                        overflow: visible; /* Текст будет выходить за пределы, но не скрываться */
+                    }
+                
+                    /* Стиль для контейнера с описанием */
+                    .description-container {
+                        max-width: 300px; /* Устанавливаем максимальную ширину для блока */
+                        max-height: 200px; /* Устанавливаем максимальную высоту для блока */
+                        overflow: auto; /* Включаем прокрутку в случае переполнения */
+                        margin: 0 auto; /* Центрируем блок */
+                        padding-right: 10px; /* Добавляем немного отступа справа, чтобы текст не сливался с краем */
+                        color: #e0e0e0; /* Цвет текста */
+                    }
+                
+                    /* Скрыть полосы прокрутки, но оставить возможность прокрутки */
+                    .description-container::-webkit-scrollbar {
+                        display: none; /* Скрыть полосу прокрутки в вебкит-браузерах (Chrome, Safari) */
+                    }
+                
+                    .normal-text {
+                        color: #e0e0e0;
+                    }
+                </style>
+                
+                <script>
+                    let isGoldenFreddy = false; // Состояние, которое отслеживает, обычный ли это Фредди или Золотой
+                    let glitchInterval;
+                
+                    function transformToGoldenFreddy() {
+                        const freddyName = document.getElementById('freddy-name');
+                        const freddyImg = document.getElementById('freddy-img');
+                        const freddyDescription = document.getElementById('freddy-description');
+                
+                        if (!isGoldenFreddy) {
+                            // Изменить текст на "Золотой Фредди" и сделать его красным
+                            freddyName.textContent = 'Золотой Фредди';
+                            freddyName.style.color = 'black';
+                
+                            // Изменить изображение на Золотого Фредди (вы можете заменить на другой путь к изображению)
+                            freddyImg.src = 'goldenfreddy.webp'; // Замените на путь к изображению Золотого Фредди
+                
+                            // Начать генерацию глюков в описании
+                            glitchInterval = setInterval(() => {
+                                freddyDescription.innerHTML = `<span class="glitch-text">${generateRandomGlitch()}</span>`;
+                            }, 100); // Каждые 100 миллисекунд менять текст
+                
+                            // Применяем класс для отображения прокрутки
+                            freddyDescription.classList.add('description-container');
+                            isGoldenFreddy = true; // Установить, что теперь это Золотой Фредди
+                        } else {
+                            // Восстановить обратно в обычного Фредди
+                            freddyName.textContent = 'Фредди Фазбер';
+                            freddyName.style.color = 'pink'; // Возвращаем оригинальный цвет
+                
+                            // Вернуть оригинальное изображение
+                            freddyImg.src = 'freddygg.webp'; // Замените на путь к изображению обычного Фредди
+                
+                            // Остановить генерацию глюков
+                            clearInterval(glitchInterval);
+                            freddyDescription.textContent = 'Коричневый медведь, главный аниматроник, активен в поздние ночи.'; // Возвращаем стандартное описание
+                            freddyDescription.classList.remove('glitch-text'); // Убираем класс глитч
+                            freddyDescription.classList.remove('description-container'); // Убираем прокрутку
+                
+                            isGoldenFreddy = false; // Возвращаем в состояние обычного Фредди
+                        }
+                    }
+                
+                    // Функция для генерации случайных глючных символов
+                    function generateRandomGlitch() {
+                        const characters = ['@', '#', '$', '%', '&', '*', '!', '1', '2', '3', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '%', '&', '^', '=', '?', '~', '|', '/', '\\', '(', ')', '{', '}', '<', '>', '£', '€'];
+                        let glitchText = '';
+                        for (let i = 0; i < 30; i++) { // Увеличил количество символов
+                            glitchText += characters[Math.floor(Math.random() * characters.length)];
+                        }
+                        return glitchText;
+                    }
+                </script>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="bonnie.webp" alt="Бонни" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Бонни Кролик</h3>
+                    <p class="text-gray-400">Фиолетовый кролик, атакует с левой стороны, самый активный.</p>
+                </div>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="chika.webp" alt="Чика" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Чика</h3>
+                    <p class="text-gray-400">Жёлтый циплёнок, движется справа, часто бывает на кухне.</p>
+                </div>
+                <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg text-center hover:scale-105 transition transform neon-shadow">
+                    <img src="foxy.webp" alt="Фокси" class="w-24 h-24 mx-auto rounded-full mb-4 neon-shadow">
+                    <h3 class="text-xl font-bold text-pink-300">Фокси</h3>
+                    <p class="text-gray-400">Лис-пират, прячется в пиратской бухте, атакует быстро из коридора.</p>
+                </div>
+            </div>
+        </section>
+
+             <!-- Раздел с полноэкранным видео -->
+        <section class="relative w-screen h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+               <source src="videofnaf.mp4" type="video/mp4">
+            </video>
+        </section>
+
     </main>
 </body>
 </html>
