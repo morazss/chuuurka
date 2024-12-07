@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сюжет FNAF</title>
+    <title>FNAF Visual Novel</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Дополнительные стили для неонового эффекта */
         body {
-            font-family: 'Press Start 2P', cursive;
-            background: linear-gradient(to bottom, #000000, #0d0221);
-            color: #e0e0e0;
+            font-family: 'Press Start 2P', cursive; /* Ретро-шрифт 80-х */
+            background: linear-gradient(to bottom, #000000, #0d0221); /* Тёмный фон с лёгким градиентом */
+            color: #e0e0e0; /* Светло-серый текст */
         }
-        h1, h2 {
+        h1, h2, h3 {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 0, 255, 0.8);
         }
         a:hover {
@@ -21,10 +24,93 @@
         .neon-shadow {
             box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8);
         }
+        @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-in-out;
+    }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: white;
+            font-family:'Press Start 2P', cursive;
+        }
+        #gameContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+        #characters {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 70%;
+        }
+        #leftCharacter, #rightCharacter {
+            width: 30%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #dialogueBox {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid white;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        #textDisplay {
+            min-height: 50px;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+        #choiceContainer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        #choiceContainer button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background: #555;
+            border: none;
+            cursor: pointer;
+        }
+        #choiceContainer button:hover {
+            background: #777;
+        }
+        #nextButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background: #555;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #nextButton:hover {
+            background: #777;
+        }
     </style>
 </head>
 <body>
-    <!-- Навигационная панель -->
     <header class="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
         <nav class="flex justify-between items-center p-4">
             <div class="flex items-center gap-4">
@@ -39,42 +125,17 @@
           </ul>
         </nav>
       </header>
-
-    <!-- Основной контент -->
-    <main class="pt-24 p-8">
-        <h1 class="text-4xl text-pink-300 font-bold mb-8">Сюжет FNAF</h1>
-        <section class="text-gray-400 space-y-8">
-            <h2 class="text-3xl text-pink-300 font-bold mb-4">Зловещая история</h2>
-            <p>
-                В центре сюжета Five Nights at Freddy's — пиццерия Freddy Fazbear's Pizza, 
-                где аниматроники, созданные для развлечений, начинают вести себя странно. 
-                За ними стоит загадочная история, полная трагедий, исчезновений детей и 
-                зловещих экспериментов.
-            </p>
-
-            <h2 class="text-3xl text-pink-300 font-bold mb-4">Роль игрока</h2>
-            <p>
-                Вы — ночной охранник, чья задача — выжить в течение пяти ночей, избегая 
-                столкновений с аниматрониками, которые оживают по ночам. Используйте камеры 
-                наблюдения, свет и двери, чтобы защититься. Но будьте осторожны — энергия 
-                ограничена!
-            </p>
-
-            <h2 class="text-3xl text-pink-300 font-bold mb-4">Тайны и секреты</h2>
-            <p>
-                Каждая игра раскрывает всё новые детали сюжета. События, связанные с 
-                семейной драмой создателя аниматроников Уильяма Афтона, его эксперименты 
-                с технологиями и жуткие судьбы персонажей, остаются в центре внимания 
-                поклонников FNAF.
-            </p>
-
-            <h2 class="text-3xl text-pink-300 font-bold mb-4">Эпоха страха</h2>
-            <p>
-                Погружайтесь в мрачный мир FNAF, чтобы узнать правду о таинственных событиях, 
-                которые начались с открытия Freddy Fazbear's Pizza и продолжают преследовать 
-                её посетителей и сотрудников.
-            </p>
-        </section>
-    </main>
+    <div id="gameContainer">
+        <div id="characters">
+            <div id="leftCharacter"></div>
+            <div id="rightCharacter"></div>
+        </div>
+        <div id="dialogueBox">
+            <div id="textDisplay"></div>
+            <button id="nextButton">Далее</button>
+        </div>
+        <div id="choiceContainer"></div>
+    </div>
+    <script src="lor.js"></script>
 </body>
 </html>
